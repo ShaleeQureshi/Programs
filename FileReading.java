@@ -11,18 +11,19 @@ public class FileReading {
   
   public static void main(String[] args) throws IOException { 
     
-    File file = new File ("FileReading.txt");
+    File file = new File ("the file"); 
     FileReader fileR = new FileReader (file);
     BufferedReader readFile = new BufferedReader (fileR);
     
-    String line[]; 
-    line = new String [3];
-    
-    for (int i = 0; i < line.length; i++) {
-    line[i] = readFile.readLine();
-    System.out.println(line[i]); 
+    String line;
+
+    //Loop to read from the file as long as the contents are not null
+    while ((line = readFile.readLine()) != null){
+    System.out.println(line); //Dispalying the contents
     }
-    readFile.close();
+    
+    fileR.close(); //Closing the stream
+    readFile.close(); //Closing the reader
     
   }
   
